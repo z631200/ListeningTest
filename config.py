@@ -1,0 +1,4 @@
+OUTPUT_AUDIO_FILE = "audio"
+SAMPLED_AUDIO_FILE = "audio_sample_partitioned.mp3"
+SEGMENT_LEN_MS = 5000
+SAMPLE_PORTION = 0.5

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虛擬環境
+venv/
+env/
+ENV/
+.env
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# 專案特定
+*.wav
+*.mp3
+*.txt
+*.srt
+*.vtt
+*.json
+
+# 日誌
+*.log
+
+# 本地設定
+config_local.py
+
+# 備份
+backup.py
+
+# 暫存檔案
+*.tmp
+*.temp 
