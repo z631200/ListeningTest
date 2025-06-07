@@ -28,8 +28,7 @@ main/
 ├── main.py
 ├── config.py
 ├── output_file/         # 儲存輸出檔案
-
-├── transcription_maker  # 逐字稿生成
+├── transcription_maker  # 逐字稿生成模組
     ├── whisper_ctrl.py      # 主程式
     ├── tool/                # 工具目錄（包含 FFmpeg）
     ├── utils/               # 工具函數
@@ -41,7 +40,7 @@ main/
 ├── quiz_speaker/        # 題目語音生成模組
     ├── audio_maker.py       # 工具函數
     └── audio_ctrl.py        # 音訊控制
-└── start_quiz/          # 轉錄相關模組
+└── start_quiz/          # 測驗模組
     └── quiz_ctrl.py         # 主程式
 
 ```
