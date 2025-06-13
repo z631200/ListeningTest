@@ -1,13 +1,19 @@
 import whisper
 from tqdm import tqdm
-from utils.time_utils import format_time
+# from utils.time_utils import format_time
 # from config import SEGMENT_LEN_MS
 import os
 from datetime import datetime
 
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_file")
 os.makedirs(OUTPUT_DIR, exist_ok=True)  # 確保輸出目錄存在
+
+def format_time(seconds: float) -> str:
+    hrs = int(seconds // 3600)
+    mins = int((seconds % 3600) // 60)
+    secs = int(seconds % 60)
+    return f"{hrs:02}:{mins:02}:{secs:02}"
 
 def transcribe_with_original_time(mp3_path, segment_offset_map):
     model = whisper.load_model("base")

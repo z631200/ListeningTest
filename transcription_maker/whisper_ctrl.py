@@ -1,7 +1,7 @@
-from downloader.audio_downloader import download_audio
-from audio_processing.segmenter import split_audio
-from audio_processing.sampler import sample_segments, process_full_audio
-from transcription.whisper_transcriber import transcribe_with_original_time
+from .downloader.audio_downloader import download_audio
+from .audio_processing.segmenter import split_audio
+from .audio_processing.sampler import sample_segments, process_full_audio
+from .transcription.whisper_transcriber import transcribe_with_original_time
 import os
 import sys
 import glob
@@ -77,6 +77,28 @@ def delete_files_in_directory():
 def quiz_maker():
     return
 
+def test_func():
+    use_sampling = True
+    # [1] 下載音訊
+    audio_path = download_audio("https://www.youtube.com/watch?v=N02AZF_v5ZU")
+    print("[1] 音訊下載完成")
+
+    # [2] 切割音訊
+    segments, duration_ms = split_audio(audio_path)
+
+    # [3] 處理音訊（抽樣或完整）
+    if use_sampling:
+        print("[2] 開始音訊抽樣...")
+        sampled_path, segment_offset_map = sample_segments(segments, duration_ms)
+    else:
+        print("[2] 開始處理完整音訊...")
+        sampled_path, segment_offset_map = process_full_audio(segments, duration_ms)
+    print("[2] 音訊處理完成")
+
+    # [4] Whisper 轉錄 + 回推原始時間
+    print("[3] 開始 Whisper 轉錄...")
+    transcribe_with_original_time(sampled_path, segment_offset_map)
+
 def core():
     print("\n請選擇模式：")
     print("1. 處理本地音訊檔案 (m4a)")
@@ -90,14 +112,18 @@ def core():
     
     process_choice = input("請輸入選項 (1/2)：")
     use_sampling = process_choice == "2"
-    
-    if choice == "1":
-        audio_path = input("請輸入 m4a 檔案路徑：")
-        process_local_audio(audio_path, use_sampling)
-    elif choice == "2":
-        process_youtube_video(use_sampling)
-    else:
-        print("❌ 無效的選項")
+
+    try:    
+        if choice == "1":
+            audio_path = input("請輸入 m4a 檔案路徑：")
+            process_local_audio(audio_path, use_sampling)
+        elif choice == "2":
+            process_youtube_video(use_sampling)
+        else:
+            print("❌ 無效的選項")
+    except Exception as e:
+        print(f"❌ 處理過程中發生錯誤：{e}")
+        return
         
     print("轉至下一階段...")
 

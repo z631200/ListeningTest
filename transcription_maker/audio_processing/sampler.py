@@ -5,8 +5,9 @@ from pydub import AudioSegment
 from config import SAMPLE_PORTION, SAMPLED_AUDIO_FILE, SEGMENT_LEN_MS
 
 # 設定 ffmpeg 路徑
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-TOOL_DIR = os.path.join(BASE_DIR, "tool")
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+FUNC_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+TOOL_DIR = os.path.join(FUNC_DIR, "tool")
 FFMPEG_PATH = os.path.join(TOOL_DIR, "ffmpeg.exe")
 
 OUTPUT_DIR = os.path.join(BASE_DIR, "output_file")

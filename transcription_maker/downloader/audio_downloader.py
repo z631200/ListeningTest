@@ -1,5 +1,11 @@
 import os
 import yt_dlp
+import sys
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.join(CURRENT_DIR, "..", ".."))
+sys.path.append(BASE_DIR)
+
 from config import OUTPUT_AUDIO_FILE
 
 def download_audio(youtube_url: str) -> str:
@@ -7,7 +13,7 @@ def download_audio(youtube_url: str) -> str:
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     
     # 設定輸出音訊的目錄與檔名
-    output_dir = os.path.join(project_root, "output_file")
+    output_dir = os.path.join(BASE_DIR, "output_file")
     os.makedirs(output_dir, exist_ok=True)  # 若資料夾不存在則建立
 
     output_file = OUTPUT_AUDIO_FILE + ".mp3"
