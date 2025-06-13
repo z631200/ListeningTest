@@ -56,7 +56,7 @@ def main():
         asyncio.run(response_ctrl.core())
         return
     elif choice == "4":
-        audio_ctrl.core()
+        audio_ctrl.core(True)
         return
     elif choice == "5":
         return
