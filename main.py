@@ -1,8 +1,8 @@
 import os
 import glob
-# import asyncio
+import asyncio
 from transcription_maker import whisper_ctrl
-import quiz_maker.response_ctrl
+from quiz_maker import response_ctrl
 # import quiz_speaker.audio_ctrl
 # import start_quiz.quiz_ctrl
 
@@ -52,7 +52,7 @@ def main():
         whisper_ctrl.core()
         return
     elif choice == "3":
-        # asyncio.run(quiz_maker.core.core())
+        asyncio.run(response_ctrl.core())
         return
     elif choice == "4":
         return
