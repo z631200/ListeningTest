@@ -17,7 +17,7 @@ Application for generating and conducting listening tests baesd on videos
 3. Use a TTS API to generate an audio file for the questions.
 4. Run the listening test.
 
-## 🕹️ Commands
+## 🕹️ Commands (temp)
 1. play: Play the spoken question
 2. answer: Choose from options a, b, c, or d
 3. stop: Stop audio playback
@@ -35,17 +35,17 @@ main/
     ├── downloader/          # 下載相關模組
     ├── audio_processing/    # 音訊處理模組
     └── transcription/       # 轉錄相關模組
-├── quiz_maker/          # 題目文字生成模組
-    └── response_ctrl.py     # 主程式
-├── quiz_speaker/        # 題目語音生成模組
-    ├── audio_maker.py       # 工具函數
+├── quiz_maker/          # 題目文字模組
+    └── response_ctrl.py     # 模組主程式
+├── quiz_speaker/        # 題目語音模組
+    ├── audio_maker.py       # 音訊生成
     └── audio_ctrl.py        # 音訊控制
 └── start_quiz/          # 測驗模組
-    └── quiz_ctrl.py         # 主程式
+    └── quiz_ctrl.py         # 模組主程式
 
 ```
 
-## 套件
+## 套件 (temp)
 pip install dotenv openai pygame
 
 ## reference
