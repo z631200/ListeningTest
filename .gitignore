@@ -50,6 +50,7 @@ config_local.py
 
 # 備份
 backup.py
+test.py
 
 # 暫存檔案
 *.tmp
