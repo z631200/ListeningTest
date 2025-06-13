@@ -14,7 +14,6 @@ def format_time(seconds: float) -> str:
     mins = int((seconds % 3600) // 60)
     secs = int(seconds % 60)
     return f"{hrs:02}:{mins:02}:{secs:02}"
-
 def transcribe_with_original_time(mp3_path, segment_offset_map):
     model = whisper.load_model("base")
 
