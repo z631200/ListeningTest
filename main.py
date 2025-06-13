@@ -3,7 +3,8 @@ import glob
 import asyncio
 from transcription_maker import whisper_ctrl
 from quiz_maker import response_ctrl
-# import quiz_speaker.audio_ctrl
+from quiz_speaker import audio_ctrl
+
 # import start_quiz.quiz_ctrl
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -55,6 +56,7 @@ def main():
         asyncio.run(response_ctrl.core())
         return
     elif choice == "4":
+        audio_ctrl.core()
         return
     elif choice == "5":
         return
