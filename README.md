@@ -27,8 +27,6 @@ Provide a simple, Windows-only tool to generate and run both listening tests (fr
    2. Generate listening questions from the transcript using the OpenAI Response API (you can decide how many questions to create).
    3. Use text-to-speech to read questions aloud during the listening test.
    4. Run the listening test in the Gradio UI.
-   #### Demo Video (Listening Test Part)
-   https://youtu.be/zczMy0f_P0E
 
    ### 📝 Text-Based Quiz
    1. Upload the materials to an OpenAI Vector Store for retrieval (File Search / RAG).
