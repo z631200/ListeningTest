@@ -2,7 +2,6 @@
 An application for generating and conducting listening tests and text-based quizzes based on videos and uploaded text materials.
 This project currently runs on Windows only.
 
-
 ## 🎯 Objective
 Provide a simple, Windows-only tool to generate and run both listening tests (from videos) and text-based quizzes (from uploaded materials) through a Gradio web interface, using OpenAI for question generation and optional text-to-speech for audio playback.
 
@@ -28,11 +27,16 @@ Provide a simple, Windows-only tool to generate and run both listening tests (fr
    2. Generate listening questions from the transcript using the OpenAI Response API (you can decide how many questions to create).
    3. Use text-to-speech to read questions aloud during the listening test.
    4. Run the listening test in the Gradio UI.
+   #### Demo Video (Listening Test Part)
+   https://youtu.be/zczMy0f_P0E
 
    ### 📝 Text-Based Quiz
    1. Upload the materials to an OpenAI Vector Store for retrieval (File Search / RAG).
    2. Generate text-based quiz questions using the OpenAI Response API with retrieval from the Vector Store.
    3. Run the text-based quiz in the Gradio UI.
+  
+## 🎬 Demo Video
+Listening Test Part: https://youtu.be/zczMy0f_P0E
 
 ## 🧰 Requirements
 - **Whisper** (speech-to-text transcription)
